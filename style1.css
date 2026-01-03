@@ -1,0 +1,167 @@
+
+/* Basic page setup */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+/* Heading styling */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Input area styling */
+#taskInput {
+    width: 70%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color:#561414;
+}
+
+/* Button styling */
+button {
+    padding: 12px 25px;
+    background-color: #561414;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #912424;
+}
+
+button, input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Task list styling */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+/* Individual task items */
+#taskList li {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #561414;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+/* Completed task styling */
+#taskList li.completed {
+    border-left-color: #ccc;
+    opacity: 0.7;
+}
+
+#taskList li.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Checkbox styling */
+#taskList li input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+/* Task text */
+#taskList li span {
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+/* Delete button inside task */
+#taskList li .delete-btn {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+#taskList li .delete-btn:hover {
+    background-color: #ffe6e6;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Responsive font size */
+    }
+    
+    #taskInput {
+        width: calc(90% - 80px); /* Leaves space for button */
+        margin-bottom: 0; /* Remove the bottom margin */
+        margin-right: 5px; /* Keep space between them */
+        display: inline-block; /* Keep them inline */
+        padding: 10px 12px; /* Balanced padding */
+        height: 40px; /* Slightly shorter */
+        min-height: 40px;
+        box-sizing: border-box;
+    }
+    
+    button {
+        width: auto; /* Don't make it full width */
+        height: 40px;
+        padding: 0 15px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    #taskInput, button {
+        font-size: 16px; /* Prevents iOS zoom */
+        height: 44px; /* Minimum touch target size */
+        min-height: 44px; /* For accessibility */
+    }
+
+    #taskList li .delete-btn {
+        font-size: 16px;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        margin-left: 5px;
+        
+    }
+
+    #taskList li {
+        padding: 10px 12px;
+        word-break: break-word; /* Break long words */
+        overflow-wrap: break-word; /* Break at any character */
+        max-width: calc(100% - 100px); /* Leave space for checkbox and delete */
+        line-height: 1.4;
+    }
+}
